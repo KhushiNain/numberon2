@@ -2,7 +2,7 @@
 
 let number1=Math.round(Math.random()*100)
 let number2=Math.round(Math.random()*100)
-console.log(number1,number2);
+// console.log(number1,number2);
 let number1Box=document.getElementById("number1");
 let number2Box=document.getElementById("number2");
 number1Box.innerText=number1;
@@ -23,7 +23,7 @@ let score=0;
 
 let number3;
 let number3Box=document.getElementById("number3");
-console.log(number3)
+// console.log(number3)
 
 
 // Iteration 5: Creating a randomise function to make the game functional
@@ -83,6 +83,7 @@ randomise();
 plusBtn.onclick=()=>{
     if (number1+number2==number3){
         score++;
+        console.log(score)
         randomise();
         resetTimer(timerID);
     }else{
@@ -143,10 +144,13 @@ function starttimer(){
     timerID=setInterval(() => {
         count--;
         timer.innerHTML=count;
-        console.log(count)
+        // console.log(count)
         if (count==0){
             window.location.href='./gameover.html'
         }
+        localStorage.setItem("gameScore",score);
+        console.log(score)
+
     }, 1000);
 
 }
@@ -157,5 +161,5 @@ function resetTimer(timerID){
     starttimer();
 }
 
-// score storage
+// score storage 
 

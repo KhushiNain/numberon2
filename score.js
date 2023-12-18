@@ -4,3 +4,5 @@ playAgain.addEventListener('click',function(){
     window.location.href='./game.html'
 })
 
+let score = localStorage.getItem("gameScore");
+document.getElementById("score-board").innerText=score;
